@@ -1,0 +1,45 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.main {
+	width: 100vh;
+	height: 45vh;
+	padding: 10px ;
+	background-color: #a6ddc8;
+}
+
+h1 {
+	text-align: center;
+	color: #0a4730;
+	
+}
+
+fieldset {
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	margin: 3px;
+	height: 25px;
+	background-color: #edf2f0;
+	border: 2px solid #0a4730;
+    border-radius: 20px;
+}
+ .fieldset-wrapper {
+ 	display: flex;	
+ 	flex-direction: column;
+ }
+
+ .wrapper {
+ 	display: flex;
+ 	justify-content: center;
+ }
+
+ .bill {
+ 	height: 35px;
+ 	margin-top: 20px;
+ 	font-size: 25px;
+ }
