@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>market</title>
+	<title>Market</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<div class="main">
 
 		<header class="header">
-			<h1><i>Purchase list</i></h1>
+			<h1><i>Receipt</i></h1>
 		</header>
 
-		<form method="POST" >
-			<fieldset class="center">
-			<div class="fieldset-wrapper">
-			<button type="button" onclick="selectPlace()"> 1. Generate items offer </button>
-			<br>
-			<button type="button" onclick="weigh()"> 2. Weigh products </button>
-			<br>
-			<button type="button" onclick="evaluation()"> 3. Evaluate </button>
-			</div>
-			</fieldset>
-		</form>	
 		<div class="wrapper">
-			<button class="bill" type="button" onclick="purchase()"> Get bill</button>
+			<button type="button" id="btn" onclick="purchase()"> Get bill</button>
 		</div>
-		
-		
+
+		<div class="wrapper">
+			<table id="list">
+				<thead>
+					<tr>
+						<th> Place </th>
+					    <th> Price </th>
+					    <th> Weight </th>
+					</tr>
+				</thead>
+
+				<tbody id="matchData"></tbody>
+			</table>
+			
+		</div>	
+		<div class="wrapper">
+			<p id="output"> Total: </p>
+		</div>
 	</div>
+
 	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

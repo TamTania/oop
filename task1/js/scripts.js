@@ -12,18 +12,11 @@ Item.prototype.getWeight = function () {
 	return this.weight;
 };
 
-console.log("1. Press 'Generate items offer' button");
-console.log("2. Press 'Weigh products' button");
-console.log("3. Press 'Evaluate' button");
-console.log("4. Nice! Get bill");
-
 function selectPlace () {
 	var places = ['electronic', 'bodycare', 'backery', 'butchery', 'frozen', 'dairy', 'grocery', 'beer&wine'];
   	var place = places[Math.floor(Math.random()*places.length)];
   	return place;
 };
-
-
 
 function evaluation () {
   var price = Math.round(Math.random()*500);
@@ -35,18 +28,35 @@ function weigh () {
   	return weight;
 };
 
-function purchase () {
-	var purchases = [];
-	var billValue = 0;
-	for (var i = 0; i < 15; i++) {
-	    purchases.push(new Item(selectPlace(), evaluation(), weigh()));
-	    console.log(purchases[i]);
-	    billValue += purchases[i].getPrice();
-	}
-	console.log("Total: " + billValue + " $");
+function drawTable(tbody, obj) {
+    var tr, td;
+    tbody = document.getElementById(tbody);
+    tr = tbody.insertRow(tbody.rows.length);
+    td = tr.insertCell(tr.cells.length);
+    td.setAttribute("align", "center");
+    td.innerHTML = obj.place;
+    td = tr.insertCell(tr.cells.length);
+    td.setAttribute("align", "center");
+    td.innerHTML = obj.price;
+    td = tr.insertCell(tr.cells.length);
+    td.setAttribute("align", "center");
+    td.innerHTML = obj.weight;    
 };
 
+function purchase () {
+	var btn = document.getElementById('btn').disabled = true;
+	var billValue = 0;
+	for (var i = 0; i < 15; i++) {
+		var item = new Item(selectPlace(), evaluation(), weigh());
+		console.log(item);
+	    billValue += item.getPrice();
+	    drawTable("matchData", item);
 
+	}
+	console.log("Total: " + billValue + " $");
+	document.getElementById('output').innerHTML += billValue;
+
+};
 
 
 

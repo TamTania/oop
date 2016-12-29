@@ -5,7 +5,7 @@ body {
 
 .main {
 	width: 100vh;
-	height: 45vh;
+	height: 100vh;
 	padding: 10px ;
 	background-color: #a6ddc8;
 }
@@ -22,24 +22,19 @@ fieldset {
 }
 
 button {
-	margin: 3px;
-	height: 25px;
+	height: 35px;
 	background-color: #edf2f0;
 	border: 2px solid #0a4730;
     border-radius: 20px;
+    font-size: 25px;
 }
- .fieldset-wrapper {
- 	display: flex;	
- 	flex-direction: column;
- }
 
  .wrapper {
  	display: flex;
  	justify-content: center;
  }
 
- .bill {
- 	height: 35px;
+ table {
  	margin-top: 20px;
- 	font-size: 25px;
+ 	width: 50vh;
  }
